@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Generated;
 
+//Annotations for mysql
 @Entity
 @Data
 @Table(name = "users")
