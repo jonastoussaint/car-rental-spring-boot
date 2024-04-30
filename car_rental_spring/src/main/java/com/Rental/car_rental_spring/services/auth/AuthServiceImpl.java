@@ -22,7 +22,7 @@ public class AuthServiceImpl implements AuthService {
         user.setEmail(signupRequest.getEmail());
         user.setPassword(signupRequest.getPassword());
         user.setUserRole(UserRole.CUSTOMER);
-        User createdUser = userRepository.save(user)
+        User createdUser = userRepository.save(user);
         UserDto userDto = new UserDto();
         userDto.setId(createdUser.getId());
 
