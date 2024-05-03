@@ -25,6 +25,9 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> signupCustomer(@RequestBody SignupRequest signupRequest){
 
+        if(authService.hasCustomerWithEmail(signupRequest.getEmail())){
+            return new ResponseEntity<>("Customer already exists", HttpStatus.NOT_ACCEPTABLE);
+        }
         //This line calls the createCustomer method of the authService object, passing the signupRequest object as an argument.
         // This method presumably creates a new customer based on the provided signup information and
         // returns a UserDto object representing the created customer.

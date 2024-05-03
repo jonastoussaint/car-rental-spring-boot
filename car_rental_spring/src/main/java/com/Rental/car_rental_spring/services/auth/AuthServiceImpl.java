@@ -7,6 +7,7 @@ import com.Rental.car_rental_spring.enums.UserRole;
 import com.Rental.car_rental_spring.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import com.Rental.car_rental_spring.services.auth.AuthService;
 
 @Service
 @RequiredArgsConstructor
@@ -27,5 +28,12 @@ public class AuthServiceImpl implements AuthService {
         userDto.setId(createdUser.getId());
 
         return userDto;
+
+     }
+
+
+    @Override
+    public boolean hasCustomerWithEmail(String email) {
+        return userRepository.findFirstByEmail(email).isPresent();
     }
 }
