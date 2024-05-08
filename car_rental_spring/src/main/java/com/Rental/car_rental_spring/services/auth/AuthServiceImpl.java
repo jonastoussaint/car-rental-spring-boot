@@ -28,7 +28,6 @@ public class AuthServiceImpl implements AuthService {
         userDto.setId(createdUser.getId());
 
         return userDto;
-
      }
 
 
